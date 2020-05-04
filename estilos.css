@@ -1,0 +1,252 @@
+body{
+    background-color: #333;
+    cursor: pointer;
+}
+.contenedor{
+    height: 500px;
+    width: 400px;
+    margin: 30px auto;
+}
+.cont-orejas{
+    margin: auto;
+    height: 100px;
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -80px;
+    position: relative;
+    top: 20px;
+}
+.cont-orejas .orejas{
+    width: 0;
+    height: 0;
+    border-right: 60px solid transparent;
+    border-top: 60px solid transparent;
+    border-left: 60px solid #9A7544;
+    border-bottom: 60px solid #9A7544;
+    border-radius: 20px;
+   }/*
+.oreja1 .item{
+    position: relative;
+    height: 30px;
+    width: 30px;
+    background-color: #7F633D;
+   display: block;
+   top: -70px;
+   left: -60px;
+    z-index: -1;
+}*/
+.oreja1{
+    transform: rotate(90deg);
+    position: relative;
+    left: -40px;
+    z-index: 2;
+}
+.oreja2{
+    transform: rotate(-190deg);
+}
+.cara{
+    background-color: #AF8546;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+    animation: rotar 3s infinite ease-in-out alternate;
+}
+ .corazon{
+    top: 30px;
+    height: 50px;
+    width: 50px;
+    position: relative;
+    background-color: #fff;
+    transform: rotate(-45deg);
+}
+.corazon::before , .corazon::after{
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    transform: translateX(25px);
+}
+.corazon::after{
+    transform: translateY(-25px);
+}
+.linea{
+    position: absolute;;
+    height: 150px;
+    width: 40px;
+    border-radius: 20px;
+    background-color: #fff;
+    right: 70px;
+    transform: rotate(45deg);
+    left:-45px;
+}
+.cont-ojos{
+    position: relative;
+    top: 50px;
+    height: 80px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cont-ojos .ojos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 80px;
+    background-color: #111;
+}
+.ojo1{
+    border-radius: 40px 40px 30px 20px;
+}
+.ojo2{
+    border-radius: 40px 40px 30px 20px;
+}
+.ojos .ocular{
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+.box-nariz{
+    position: relative;
+    top: 50px;
+    height: 150px;
+    width: 180px;
+    border-radius: 50px 50px 40px 40px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box-nariz .nariz{
+    height: 70px;
+    width: 90px;
+    border-radius: 20px 20px 50px 50px;
+    background-color: #111;
+}
+.nariz::before{
+    content: "";
+    position: absolute;
+    height: 50px;
+    width: 130px;
+    left: 25px;
+    background-color: #9A918D;
+    top: 130px;
+    border-radius:0 0 50% 50%;
+    z-index: -1;
+}
+.cuerpo
+{
+    background-color: #fff;
+   /* background-color: #D7D8D5;*/
+    height: 350px;
+    width: 350px;
+    margin:-50px auto;
+    border-radius: 40% 40% 0 0;
+    overflow: hidden;
+}
+.cuerpo .patas{
+    border-radius: 20px;
+    height: 120px;
+    width: 170px;
+    background-color: #111;
+ margin:50px auto;
+}
+.cuerpo::before{
+    content: "";
+    position: absolute;
+    /*background-color: #D7D8D5;*/
+    background-color: #fff;
+    height: 250px;
+    width: 40px;
+    border-radius:50% 50% 10px 10px ;
+  margin: -100px 5px;
+  z-index: -1;
+    transform: rotate(-70deg);
+    transform-origin: bottom;
+    animation: cola .7s infinite linear alternate;
+}
+.cuello{
+    margin: auto;
+    height: 200px;
+    width: 230px;
+    border-radius:0 0 50% 50%;
+    /*background-color: #C2C0BF;*/
+    background-color: #ccc;
+}
+.lengua{
+    position:absolute;
+    height: 120px;
+    width: 80px;
+    background-color: #D56059;
+    border-radius: 30px;
+    top: 20em;
+    z-index: -1;
+    transform: scaleY(0);
+    transition: .4s;
+    transform-origin: top;
+    animation:lengua 3s infinite linear alternate;
+}
+.cara:hover .lengua{
+    transform: scaleY(1);
+}
+
+@keyframes rotar{
+    0%{
+        transform: rotate(0deg);
+    }
+    25%,50%{
+        transform: rotate(10deg);
+    }
+    50%,75%{
+        transform: rotate(10deg);
+    }
+    100%{
+        transform: rotate(-10deg);
+    }
+}
+
+@keyframes lengua{
+    0%,25%{
+        transform-origin: top;
+        transform: scaleY(1);
+    }
+    25%,50%{
+        transform-origin: top;
+        transform: scaleY(1);
+    }
+    50%,75%{
+        transform-origin: top;
+        transform: scaleY(0);
+    }
+    100%{
+        transform-origin: top;
+        transform: scaleY(1);
+    }
+}
+
+@keyframes cola{
+    0%{
+        transform:rotate(10deg) ;
+    }/*
+    25%,50%{
+        transform:rotate(0deg) ;
+    }
+    50%,75%{
+        transform:rotate(0deg) ;
+    }*/
+    100%{
+        transform:rotate(-30deg) ;
+    }
+}
